@@ -22,7 +22,6 @@ class _ChartsScreenState extends State<ChartsScreen> {
 
   List<BarChart> list =[];
 
-
   @override
   void initState() {
     super.initState();
@@ -35,10 +34,9 @@ class _ChartsScreenState extends State<ChartsScreen> {
 
   Future<void> getData() async
   {
-    var nb=0;
+    var nb=0,b;
     final response = await http.post(Uri.parse('$url/${widget.fileName}.php'),body: {'machineId':widget.machineId});
     var data =json.decode(response.body);
-    var b ;
 
     for(int i=data.length-1; i>= 0; i--) {
       if (data[i]['machine_id'] == widget.machineId && nb<4) {

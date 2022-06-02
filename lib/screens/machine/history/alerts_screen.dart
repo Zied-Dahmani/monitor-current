@@ -21,7 +21,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
   @override
   void initState() {
     super.initState();
-    getAlertes();
+    getAlerts();
   }
 
   @override
@@ -60,7 +60,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
     );
   }
 
-  Future<void> getAlertes() async
+  Future<void> getAlerts() async
   {
     final response = await http.post(Uri.parse('$url/alerts.php'),body: {'machineId':widget.machineId});
     var data =json.decode(response.body);
