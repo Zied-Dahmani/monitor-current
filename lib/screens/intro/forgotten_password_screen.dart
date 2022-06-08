@@ -47,6 +47,7 @@ class _ForgottenPasswordScreenState extends State<ForgottenPasswordScreen> {
 
                 Logo(),
 
+                SizedBox(height: 14),
                 if(_password)
                   TextFormFieldWidget(controller:_password1Controller,icon:Icons.lock,labelText:"Mot de passe",hintText: "",
                     inputType: TextInputType.text,obscureText: true),

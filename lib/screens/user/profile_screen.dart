@@ -39,31 +39,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
               margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
               child: Form(
                 key: _Formkey,
-                child: NotificationListener<OverscrollIndicatorNotification>(
-                  onNotification: (OverscrollIndicatorNotification overscroll) {
-                    overscroll.disallowGlow();
-                    return true;
-                  },
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        TextFormFieldWidget(controller:_lastNameController,icon:Icons.info,labelText:"Nom",hintText: "",
-                            inputType: TextInputType.text),
-                        SizedBox(height: 14),
-                        TextFormFieldWidget(controller:_firstNameController,icon:Icons.info,labelText:"Prénom",hintText: "",
-                            inputType: TextInputType.number),
+                child: Column(
+                  children: [
+                    TextFormFieldWidget(controller:_lastNameController,icon:Icons.info,labelText:"Nom",hintText: "",
+                        inputType: TextInputType.text),
+                    SizedBox(height: 14),
+                    TextFormFieldWidget(controller:_firstNameController,icon:Icons.info,labelText:"Prénom",hintText: "",
+                        inputType: TextInputType.number),
 
-                        SizedBox(height: 40),
-                        ButtonWidget(text: "Modifier",width: MediaQuery.of(context).size.width-80,fontsize: 16.0,function: ()
-                        {
-                          if(_Formkey.currentState!.validate())
-                            editProfile();
-                        }
-                        ),
-                        SizedBox(height: 20)
-                      ],
+                    //SizedBox(height: 40),
+                    Spacer(),
+                    ButtonWidget(text: "Modifier",width: MediaQuery.of(context).size.width-80,fontsize: 16.0,function: ()
+                    {
+                      if(_Formkey.currentState!.validate())
+                        editProfile();
+                    }
                     ),
-                  ),
+                    SizedBox(height: 20)
+                  ],
                 ),
               )
           )

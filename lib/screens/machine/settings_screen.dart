@@ -68,7 +68,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       editMachine();
                   }
                   ),
-                  SizedBox(height: 20)
                 ],
               ),
             ),

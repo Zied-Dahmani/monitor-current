@@ -52,7 +52,7 @@ class DrawerWidget extends StatelessWidget {
                   DrawerListTile(icon: Icons.person, color: kblack, text: "Profil", function: () => Navigator.pushNamed(context,ProfileScreen.id)),
 
                   if(isAdmin)
-                  DrawerListTile(icon: Icons.people, color: kblack, text: "Controlleurs", function: () => Navigator.pushNamed(context,ControllersScreen.id)),
+                  DrawerListTile(icon: Icons.people, color: kblack, text: "Contrôleurs", function: () => Navigator.pushNamed(context,ControllersScreen.id)),
 
                   DrawerListTile(icon: Icons.logout, color: kblack, text: "Se Déconnecter",
                     function: () async {

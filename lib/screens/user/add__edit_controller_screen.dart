@@ -93,7 +93,6 @@ class _AddEditControllerScreenState extends State<AddEditControllerScreen> {
                           else editController();
                       }
                       ),
-                      SizedBox(height: 20)
                     ],
                   ),
                 ),

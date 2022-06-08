@@ -64,7 +64,7 @@ class _ControllersScreenState extends State<ControllersScreen> {
                                   Icon(Icons.person,size: 26),
                                   SizedBox(width: 14),
                                   TextWidget(text:_controllersList[i].getLastName(),color: kblack,bold: false,size: 16.0,shadow: false),
-                                  SizedBox(width: 14),
+                                  SizedBox(width: 6),
                                   TextWidget(text:_controllersList[i].getFirstName(),color: kblack,bold: false,size: 16.0,shadow: false),
                                 ],
                               ),
