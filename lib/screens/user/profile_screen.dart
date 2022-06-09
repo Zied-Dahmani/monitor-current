@@ -20,7 +20,8 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
 
   final _lastNameController = TextEditingController(),
-      _firstNameController = TextEditingController();
+      _firstNameController = TextEditingController(),
+      _passwordController = TextEditingController();
 
   final _Formkey = GlobalKey<FormState>();
 
@@ -41,11 +42,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 key: _Formkey,
                 child: Column(
                   children: [
+
                     TextFormFieldWidget(controller:_lastNameController,icon:Icons.info,labelText:"Nom",hintText: "",
                         inputType: TextInputType.text),
                     SizedBox(height: 14),
                     TextFormFieldWidget(controller:_firstNameController,icon:Icons.info,labelText:"Prénom",hintText: "",
                         inputType: TextInputType.number),
+                    SizedBox(height: 14),
+                    TextFormFieldWidget(controller:_passwordController,icon:Icons.lock,labelText:"Mot de passe",hintText: "",
+                        inputType: TextInputType.text,obscureText: true),
 
                     //SizedBox(height: 40),
                     Spacer(),
@@ -76,6 +81,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         setState(() {
           _firstNameController.text=data[i]['prénom'];
           _lastNameController.text=data[i]['nom'];
+          _passwordController.text=data[i]['mdp'];
         });
 
   }
@@ -85,8 +91,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     final prefs = await SharedPreferences.getInstance();
     var email = prefs.getString('email');
 
-    var data ={"email":email,"firstName":_firstNameController.text,"lastName":_lastNameController.text};
-    final response = await http.post(Uri.parse('$url/editController.php'),body: data);
+    var data ={"email":email,"firstName":_firstNameController.text,"lastName":_lastNameController.text,"password":_passwordController.text};
+    final response = await http.post(Uri.parse('$url/editUser.php'),body: data);
 
     var responseJson =json.decode(response.body);
 

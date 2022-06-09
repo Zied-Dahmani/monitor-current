@@ -118,7 +118,7 @@ class _AddEditControllerScreenState extends State<AddEditControllerScreen> {
   Future editController() async {
 
     var data ={"email":widget.controller.getEmail(),"firstName":_firstNameController.text,"lastName":_lastNameController.text};
-    final response = await http.post(Uri.parse('$url/editController.php'),body: data);
+    final response = await http.post(Uri.parse('$url/editUser.php'),body: data);
 
     var responseJson =json.decode(response.body);
 
